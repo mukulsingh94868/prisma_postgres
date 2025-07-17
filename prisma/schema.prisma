@@ -15,7 +15,7 @@ model User {
   password  String?
   post      Post[]
   createdAt DateTime  @default(now())
-  Comment   Comment[]
+  comment       Comment[]
 }
 
 model Post {
@@ -24,9 +24,9 @@ model Post {
   user_id       Int
   title         String
   description   String
-  comment_count BigInt    @default(0)
+  comment_count Int    @default(0)
   createdAt     DateTime  @default(now())
-  Comment       Comment[]
+  comment       Comment[]
 }
 
 model Comment {
