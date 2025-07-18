@@ -15,7 +15,22 @@ export const fetchPosts = async (req, res) => {
         },
         orderBy: {
             id: "desc"
-        }
+        },
+        // where: {
+        //     title: {
+        //         startsWith: "Hello World this"
+        //     }
+        // },
+        // where: {
+        //     title: {
+        //         endsWith: "this"
+        //     }
+        // },
+        // where: {
+        //     comment_count: {
+        //         gte: 1
+        //     }
+        // },
     });
     return res.json({ status: 200, data: posts, message: 'Fetch Posts' })
 };
@@ -64,6 +79,7 @@ export const searchPost = async (req, res) => {
     const posts = await prisma.post.findMany({
         where: {
             description: {
+                // contains: query,
                 search: query,
             },
         },
