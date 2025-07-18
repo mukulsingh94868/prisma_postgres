@@ -1,12 +1,17 @@
 import { Router } from "express";
-import { createUser, updateUser, fetchUsers, showUser, deleteUser } from "../controller/UserController.js";
+import {
+  createComment,
+  fetchComments,
+  showComment,
+  deleteComment,
+} from "../controller/CommentController.js";
 
 const router = Router();
 
-router.post('/create-user', createUser);
-router.put('/update-user/:id', updateUser);
-router.get('/fetchUsers', fetchUsers);
-router.get('/fetchUser/:id', showUser);
-router.delete('/deleteUser/:id', deleteUser);
+router.get("/fetchComment", fetchComments);
+router.get("/fetchComment/:id", showComment);
+router.post("/createComment", createComment);
+// router.put("/:id", updateUser);
+router.delete("/deleteComment/:id", deleteComment);
 
 export default router;

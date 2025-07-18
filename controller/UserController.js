@@ -48,7 +48,8 @@ export const fetchUsers = async (req, res) => {
         //     post: {
         //         select: {
         //             title: true,
-        //             comment_count: true
+        //             comment_count: true,
+        //             comment: true
         //         }
         //     }
         // }
